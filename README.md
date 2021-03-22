@@ -9,7 +9,7 @@ Then enter inside the *tara2d* directory
 ```shell
 cd tara2d
 ```
-Now complile and built the *PPDyn* code
+Now complile and built the *tara2d* code
 ```shell
 make subsystem
 ``` 

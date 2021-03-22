@@ -33,7 +33,7 @@ $(ODIR)/%.o: $(SDIR)/%.f95
 	@$(F95) -c $< -o $@ $(FFLAGS) $(INC) $(LIB)
 
 subsystem:
-	@cd $(LDIR)/cfgio && $(MAKE)
+	@cd $(LDIR)/iniparser && $(MAKE)
 
 clean:
 	@echo "Cleaning compiled files"
@@ -44,7 +44,7 @@ clean:
 veryclean: clean
 	@echo "Cleaning executables and iniparser"
 	@rm -f $(EXEC)
-	@cd $(LDIR)/cfgio && $(MAKE) clean > /dev/null 2>&1
+	@cd $(LDIR)/iniparser && $(MAKE) clean > /dev/null 2>&1
 
 run:
 	@echo "Running TARA2D"

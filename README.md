@@ -1,5 +1,7 @@
 # tara2d
 
+[![build](https://github.com/RupakMukherjee/tara2d/actions/workflows/main.yml/badge.svg)](https://github.com/RupakMukherjee/tara2d/actions/workflows/main.yml)
+
 Installation
 ------------
 #### Prerequisites

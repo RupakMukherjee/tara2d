@@ -1,5 +1,7 @@
 F95 = gfortran
-INIFLAG=-lcfgio
+ILOCAL=local/include
+LLOCAL=local/lib
+INIFLAG=-I$(ILOCAL) -L$(LLOCAL) -lcfgio
 
 # Definition of the Flags
 INC=-I/usr/local/include

@@ -1,7 +1,10 @@
 FC=gfortran
 FFLAG=-O2
-INC=/usr/local/include
-LIB=/usr/local/lib
+INC=../../local/include
+LIB=../../local/lib
+
+$(shell mkdir -p $(INC))
+$(shell mkdir -p $(LIB))
 
 TARGET=libcfgio.a
 OBJECTS= string_conv_mod.o cfgio_mod.o

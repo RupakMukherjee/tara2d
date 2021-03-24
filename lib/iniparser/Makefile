@@ -1,8 +1,10 @@
 FC=gfortran
 FFLAG=-O2
+BIN=../../local/bin
 INC=../../local/include
 LIB=../../local/lib
 
+$(shell mkdir -p $(BIN))
 $(shell mkdir -p $(INC))
 $(shell mkdir -p $(LIB))
 

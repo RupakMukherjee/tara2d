@@ -1,11 +1,11 @@
 F95 = gfortran
-ILOCAL=local/include
-LLOCAL=local/lib
-INIFLAG=-I$(ILOCAL) -L$(LLOCAL) -lcfgio
+LOCAL=local
+INIFLAG=-I$(LOCAL)/include -L$(LOCAL)/lib -lcfgio
+C_DIR := $(shell pwd)
 
 # Definition of the Flags
-INC=-I/usr/local/include
-LIB=-L/usr/local/lib
+INC=-I$(LOCAL)/include
+LIB=-L$(LOCAL)/lib
 FFLAGS = -w -lfftw3 -lm
 
 EXEC=tara2d
@@ -34,8 +34,14 @@ $(ODIR)/%.o: $(SDIR)/%.f95
 	@mkdir -p $(ODIR)
 	@$(F95) -c $< -o $@ $(FFLAGS) $(INC) $(LIB)
 
-subsystem:
+subsystems:
 	@cd $(LDIR)/iniparser && $(MAKE)
+	@cd $(LDIR)/fftw && ./configure --prefix=$(C_DIR)/$(LOCAL)
+	@cd $(LDIR)/fftw && $(MAKE)
+	@cd $(LDIR)/fftw && $(MAKE) install
+	export PATH=$(C_DIR)/$(LOCAL)/bin
+	export C_INCLUDE_PATH=$(C_DIR)/$(LOCAL)/include
+	export LIBRARY_PATH=$(C_DIR)/$(LOCAL)/lib
 
 clean:
 	@echo "Cleaning compiled files"
@@ -47,6 +53,7 @@ veryclean: clean
 	@echo "Cleaning executables and iniparser"
 	@rm -f $(EXEC)
 	@cd $(LDIR)/iniparser && $(MAKE) clean > /dev/null 2>&1
+	@cd $(LDIR)/fftw && $(MAKE) clean > /dev/null 2>&1
 
 run:
 	@echo "Running TARA2D"

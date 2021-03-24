@@ -21,7 +21,7 @@ cd tara2d
 ```
 Now complile and built the *tara2d* code
 ```shell
-make subsystem
+make subsystems
 ``` 
 
 ```shell

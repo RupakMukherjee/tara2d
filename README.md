@@ -6,7 +6,7 @@ Installation
 ------------
 #### Prerequisites
 1. [GNU Make](https://www.gnu.org/software/make/)
-2. [FFTW Library](http://www.fftw.org/)
+2. [FFTW Library](http://www.fftw.org/) (Source already included!)
 3. [python3 or higher](https://www.python.org/download/releases/3.0/)
 4. [git](https://git-scm.com/)
 

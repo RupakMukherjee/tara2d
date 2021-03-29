@@ -6,30 +6,64 @@ implicit none
 
 type(cfg_t):: cfg
 
-integer (kind=4), parameter :: Np = 10
-integer (kind=4), parameter :: Nx = 128
-integer (kind=4), parameter :: Ny = 128
-integer (kind=4), parameter :: Nh = (Nx/2) + 1
-real (kind=8), parameter :: pi = 3.1428
+real (kind=8), parameter :: pi = 3.14159265358979323846d0
 
 include "fftw3.f"
+
+integer (kind=4) Np,Nx,Ny,Nh
 
 integer (kind=4) i,j,m,n,t
 real (kind = 8) Lx, Ly, dx, dy, h, kx, ky, nu, W0, m0, d, y_Energy
 real (kind = 8) time, time_min, time_max, dt
-real (kind = 8) xp(Np), yp(Np), vxp(Np), vyp(Np)
-real (kind=8) x(Nx), y(Ny), omega(Nx,Ny), psi(Nx,Ny), ux(Nx,Ny), uy (Nx,Ny)
-complex (kind=8) omegak(Nh,Ny), omegak_new(Nh, Ny), psik(Nh,Ny), ukx(Nh,Ny), uky(Nh,Ny)
-complex (kind=8) omegak_dum(Nh,Ny),psik_dum(Nh,Ny),ukx_dum(Nh,Ny),uky_dum(Nh,Ny)
-complex (kind=8) dt_omegak_new(Nh, Ny),  dt_omegak_old(Nh, Ny)
+
+real (kind = 8), dimension (:), allocatable :: xp, yp, vxp, vyp
+real (kind = 8), dimension (:), allocatable :: x, y
+
+real (kind=8), dimension(:, :), allocatable :: omega, psi, ux, uy
+complex (kind=8), dimension(:, :), allocatable :: omegak, omegak_new, psik, ukx, uky
+complex (kind=8), dimension(:, :), allocatable :: omegak_dum,psik_dum,ukx_dum,uky_dum
+complex (kind=8), dimension(:, :), allocatable :: dt_omegak_new,  dt_omegak_old
 
 integer (kind=8) plan_forward, plan_backward
 
 character (len=90) :: filename
 
-open(unit = 20, file = 'output/Energy.dat', status = 'unknown')
-
 cfg = parse_cfg("input.ini")
+
+call cfg%get("particle","Np",Np)
+call cfg%get("grid","Nx",Nx)
+call cfg%get("grid","Ny",Ny)
+
+Nh = (Nx/2) + 1
+
+allocate(xp(Np))
+allocate(yp(Np))
+allocate(vxp(Np))
+allocate(vyp(Np))
+
+allocate(x(Nx))
+allocate(y(Ny))
+
+allocate(omega(Nx,Ny))
+allocate(psi(Nx,Ny))
+allocate(ux(Nx,Ny))
+allocate(uy(Nx,Ny))
+
+allocate(omegak(Nh,Ny))
+allocate(omegak_new(Nh,Ny))
+allocate(psik(Nh,Ny))
+allocate(ukx(Nh,Ny))
+allocate(uky(Nh,Ny))
+
+allocate(omegak_dum(Nh,Ny))
+allocate(psik_dum(Nh,Ny))
+allocate(ukx_dum(Nh,Ny))
+allocate(uky_dum(Nh,Ny))
+
+allocate(dt_omegak_new(Nh,Ny))
+allocate(dt_omegak_old(Nh,Ny))
+
+open(unit = 20, file = 'output/Energy.dat', status = 'unknown')
 
 !====================== USER INPUTS ====================================
 

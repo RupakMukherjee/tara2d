@@ -15,7 +15,7 @@ ODIR  = src/obj
 LDIR	= lib
 OUTDIR = output
 
-SRC_ 	= main.f95 derive.f95 ab.f95
+SRC_ 	= main.f95 hyd2main.f95 derive.f95 ab.f95
 OBJ_	= $(SRC_:.f95=.o)
 
 SRC = $(patsubst %,$(SDIR)/%,$(SRC_))

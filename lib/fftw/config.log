@@ -30,8 +30,8 @@ Kernel configured for up to 8 processors.
 Processor type: x86_64h (Intel x86-64h Haswell)
 Processors active: 0 1 2 3 4 5 6 7
 Primary memory available: 16.00 gigabytes
-Default processor set: 422 tasks, 2346 threads, 8 processors
-Load average: 1.78, Mach factor: 6.20
+Default processor set: 420 tasks, 2268 threads, 8 processors
+Load average: 1.10, Mach factor: 6.89
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -1355,7 +1355,7 @@ configure:16938: checking for _doprnt
 configure:16938: gcc -o conftest -O3 -fomit-frame-pointer -mtune=native -fstrict-aliasing   conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "__doprnt", referenced from:
-      _main in conftest-963afb.o
+      _main in conftest-7a5f59.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:16938: $? = 1
@@ -1459,7 +1459,7 @@ configure:17088: checking for BSDgettimeofday
 configure:17088: gcc -o conftest -O3 -fomit-frame-pointer -mtune=native -fstrict-aliasing   conftest.c -lm  >&5
 Undefined symbols for architecture x86_64:
   "_BSDgettimeofday", referenced from:
-      _main in conftest-5b2495.o
+      _main in conftest-9c584c.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:17088: $? = 1
@@ -1559,7 +1559,7 @@ configure:17088: checking for gethrtime
 configure:17088: gcc -o conftest -O3 -fomit-frame-pointer -mtune=native -fstrict-aliasing   conftest.c -lm  >&5
 Undefined symbols for architecture x86_64:
   "_gethrtime", referenced from:
-      _main in conftest-fd1694.o
+      _main in conftest-550e47.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:17088: $? = 1
@@ -1656,7 +1656,7 @@ configure:17088: checking for read_real_time
 configure:17088: gcc -o conftest -O3 -fomit-frame-pointer -mtune=native -fstrict-aliasing   conftest.c -lm  >&5
 Undefined symbols for architecture x86_64:
   "_read_real_time", referenced from:
-      _main in conftest-841095.o
+      _main in conftest-c4e2dc.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:17088: $? = 1
@@ -1753,7 +1753,7 @@ configure:17088: checking for time_base_to_time
 configure:17088: gcc -o conftest -O3 -fomit-frame-pointer -mtune=native -fstrict-aliasing   conftest.c -lm  >&5
 Undefined symbols for architecture x86_64:
   "_time_base_to_time", referenced from:
-      _main in conftest-df3fa4.o
+      _main in conftest-370d66.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:17088: $? = 1
@@ -1876,7 +1876,7 @@ configure:17088: checking for memalign
 configure:17088: gcc -o conftest -O3 -fomit-frame-pointer -mtune=native -fstrict-aliasing   conftest.c -lm  >&5
 Undefined symbols for architecture x86_64:
   "_memalign", referenced from:
-      _main in conftest-93e809.o
+      _main in conftest-63ef4f.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:17088: $? = 1
@@ -1977,7 +1977,7 @@ configure:17088: checking for _mm_malloc
 configure:17088: gcc -o conftest -O3 -fomit-frame-pointer -mtune=native -fstrict-aliasing   conftest.c -lm  >&5
 Undefined symbols for architecture x86_64:
   "__mm_malloc", referenced from:
-      _main in conftest-2b4222.o
+      _main in conftest-efe0d0.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:17088: $? = 1
@@ -2078,7 +2078,7 @@ configure:17088: checking for _mm_free
 configure:17088: gcc -o conftest -O3 -fomit-frame-pointer -mtune=native -fstrict-aliasing   conftest.c -lm  >&5
 Undefined symbols for architecture x86_64:
   "__mm_free", referenced from:
-      _main in conftest-f15486.o
+      _main in conftest-04bb22.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:17088: $? = 1
@@ -2553,7 +2553,7 @@ _rtc()
 1 warning generated.
 Undefined symbols for architecture x86_64:
   "__rtc", referenced from:
-      _main in conftest-f6d750.o
+      _main in conftest-38713e.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:17204: $? = 1
@@ -2832,7 +2832,7 @@ Target: x86_64-apple-darwin18
 Thread model: posix
 Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (Homebrew GCC 10.2.0) 
- /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin18/10.2.0/f951 conftest.f -ffixed-form -fPIC -feliminate-unused-debug-symbols -quiet -dumpbase conftest.f -mmacosx-version-min=10.14 -mtune=core2 -auxbase conftest -g -O2 -version -fintrinsic-modules-path /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/finclude -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccmLOHUe.s
+ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin18/10.2.0/f951 conftest.f -ffixed-form -fPIC -feliminate-unused-debug-symbols -quiet -dumpbase conftest.f -mmacosx-version-min=10.14 -mtune=core2 -auxbase conftest -g -O2 -version -fintrinsic-modules-path /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/finclude -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccfbNWb6.s
 GNU Fortran (Homebrew GCC 10.2.0) version 10.2.0 (x86_64-apple-darwin18)
 	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
 
@@ -2847,17 +2847,17 @@ warning: GMP header version 6.2.0 differs from library version 6.2.1.
 warning: MPFR header version 4.0.2 differs from library version 4.1.0.
 warning: MPC header version 1.1.0 differs from library version 1.2.1.
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
- as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.14 -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccQCt51g.o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccmLOHUe.s
+ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.14 -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccOdzvXd.o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccfbNWb6.s
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 Target: x86_64-apple-darwin18.7.0
 Thread model: posix
 InstalledDir: /Library/Developer/CommandLineTools/usr/bin
- "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.14.0 -filetype obj -main-file-name ccmLOHUe.s -target-cpu penryn -fdebug-compilation-dir /Users/rmukherj/Projects/tara2d/lib/fftw -dwarf-debug-producer Apple LLVM version 10.0.1 (clang-1001.0.46.4) -dwarf-version=4 -mrelocation-model pic -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccQCt51g.o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccmLOHUe.s
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.14.0 -filetype obj -main-file-name ccfbNWb6.s -target-cpu penryn -fdebug-compilation-dir /Users/rmukherj/Projects/tara2d/lib/fftw -dwarf-debug-producer Apple LLVM version 10.0.1 (clang-1001.0.46.4) -dwarf-version=4 -mrelocation-model pic -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccOdzvXd.o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccfbNWb6.s
 Reading specs from /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../../libgfortran.spec
 rename spec lib to liborig
- /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin18/10.2.0/collect2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/ -dynamic -arch x86_64 -macosx_version_min 10.14 -weak_reference_mismatches non-weak -o conftest -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../.. /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccQCt51g.o -lgfortran -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v -idsym -dsym
+ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin18/10.2.0/collect2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/ -dynamic -arch x86_64 -macosx_version_min 10.14 -weak_reference_mismatches non-weak -o conftest -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../.. /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccOdzvXd.o -lgfortran -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v -idsym -dsym
 collect2 version 10.2.0
-/usr/bin/ld -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/ -dynamic -arch x86_64 -macosx_version_min 10.14 -weak_reference_mismatches non-weak -o conftest -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../.. /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccQCt51g.o -lgfortran -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+/usr/bin/ld -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/ -dynamic -arch x86_64 -macosx_version_min 10.14 -weak_reference_mismatches non-weak -o conftest -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../.. /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccOdzvXd.o -lgfortran -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
 @(#)PROGRAM:ld  PROJECT:ld64-450.3
 BUILD 18:16:53 Apr  5 2019
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -2876,7 +2876,7 @@ Target: x86_64-apple-darwin18
 Thread model: posix
 Supported LTO compression algorithms: zlib
 gcc version 10.2.0 (Homebrew GCC 10.2.0) 
- /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin18/10.2.0/f951 conftest.f -ffixed-form -fPIC -feliminate-unused-debug-symbols -quiet -dumpbase conftest.f -mmacosx-version-min=10.14 -mtune=core2 -auxbase conftest -g -O2 -version -fintrinsic-modules-path /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/finclude -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccnEIcdz.s
+ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin18/10.2.0/f951 conftest.f -ffixed-form -fPIC -feliminate-unused-debug-symbols -quiet -dumpbase conftest.f -mmacosx-version-min=10.14 -mtune=core2 -auxbase conftest -g -O2 -version -fintrinsic-modules-path /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/finclude -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccaktE54.s
 GNU Fortran (Homebrew GCC 10.2.0) version 10.2.0 (x86_64-apple-darwin18)
 	compiled by GNU C version 10.2.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
 
@@ -2891,17 +2891,17 @@ warning: GMP header version 6.2.0 differs from library version 6.2.1.
 warning: MPFR header version 4.0.2 differs from library version 4.1.0.
 warning: MPC header version 1.1.0 differs from library version 1.2.1.
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
- as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.14 -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccanQmGL.o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccnEIcdz.s
+ as -arch x86_64 -v -force_cpusubtype_ALL -mmacosx-version-min=10.14 -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccFSZI3s.o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccaktE54.s
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 Target: x86_64-apple-darwin18.7.0
 Thread model: posix
 InstalledDir: /Library/Developer/CommandLineTools/usr/bin
- "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.14.0 -filetype obj -main-file-name ccnEIcdz.s -target-cpu penryn -fdebug-compilation-dir /Users/rmukherj/Projects/tara2d/lib/fftw -dwarf-debug-producer Apple LLVM version 10.0.1 (clang-1001.0.46.4) -dwarf-version=4 -mrelocation-model pic -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccanQmGL.o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccnEIcdz.s
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1as -triple x86_64-apple-macosx10.14.0 -filetype obj -main-file-name ccaktE54.s -target-cpu penryn -fdebug-compilation-dir /Users/rmukherj/Projects/tara2d/lib/fftw -dwarf-debug-producer Apple LLVM version 10.0.1 (clang-1001.0.46.4) -dwarf-version=4 -mrelocation-model pic -o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccFSZI3s.o /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccaktE54.s
 Reading specs from /usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../../libgfortran.spec
 rename spec lib to liborig
- /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin18/10.2.0/collect2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/ -dynamic -arch x86_64 -macosx_version_min 10.14 -weak_reference_mismatches non-weak -o conftest -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../.. /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccanQmGL.o -lgfortran -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v -idsym -dsym
+ /usr/local/Cellar/gcc/10.2.0/libexec/gcc/x86_64-apple-darwin18/10.2.0/collect2 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/ -dynamic -arch x86_64 -macosx_version_min 10.14 -weak_reference_mismatches non-weak -o conftest -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../.. /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccFSZI3s.o -lgfortran -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v -idsym -dsym
 collect2 version 10.2.0
-/usr/bin/ld -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/ -dynamic -arch x86_64 -macosx_version_min 10.14 -weak_reference_mismatches non-weak -o conftest -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../.. /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccanQmGL.o -lgfortran -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
+/usr/bin/ld -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/ -dynamic -arch x86_64 -macosx_version_min 10.14 -weak_reference_mismatches non-weak -o conftest -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../.. /var/folders/64/0hfjlhys2ns7wqqgbtctytv4rh21t6/T//ccFSZI3s.o -lgfortran -lSystem -lgcc_ext.10.5 -lgcc -lquadmath -lm -lgcc_ext.10.5 -lgcc -lSystem -no_compact_unwind -v
 @(#)PROGRAM:ld  PROJECT:ld64-450.3
 BUILD 18:16:53 Apr  5 2019
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -2923,7 +2923,7 @@ configure:21162: $? = 0
 configure:21203: gcc -o conftest -O3 -fomit-frame-pointer -mtune=native -fstrict-aliasing   conftest.c cfortran_test.o -lm   -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0 -L/usr/local/Cellar/gcc/10.2.0/lib/gcc/10/gcc/x86_64-apple-darwin18/10.2.0/../../.. -lgfortran -lquadmath -lm >&5
 Undefined symbols for architecture x86_64:
   "_foobar", referenced from:
-      _main in conftest-8a54ef.o
+      _main in conftest-ca39b1.o
      (maybe you meant: _foobar_)
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)

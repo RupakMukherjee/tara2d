@@ -1,4 +1,4 @@
-subroutine tara2dHydSer()
+subroutine tara2dHydSer(arg)
 
 use cfgio_mod, only: cfg_t, parse_cfg
 
@@ -27,8 +27,9 @@ complex (kind=8), dimension(:, :), allocatable :: dt_omegak_new,  dt_omegak_old
 integer (kind=8) plan_forward, plan_backward
 
 character (len=90) :: filename
+character (len=32) :: arg
 
-cfg = parse_cfg("input.ini")
+cfg = parse_cfg(arg)
 
 call cfg%get("particle","Np",Np)
 call cfg%get("grid","Nx",Nx)

@@ -353,8 +353,8 @@ PATH_SEPARATOR = :
 POW_LIB = 
 PRECISION = d
 PREC_SUFFIX = 
-PTHREAD_CC = 
-PTHREAD_CFLAGS = 
+PTHREAD_CC = gcc
+PTHREAD_CFLAGS = -D_THREAD_SAFE 
 PTHREAD_LIBS = 
 RANLIB = ranlib
 SED = /usr/local/bin/gsed
@@ -364,7 +364,7 @@ SHELL = /bin/sh
 SSE2_CFLAGS = 
 STACK_ALIGN_CFLAGS = 
 STRIP = strip
-THREADLIBS = 
+THREADLIBS =  
 VERSION = 3.3.9
 VSX_CFLAGS = 
 abs_builddir = /Users/rmukherj/Projects/tara2d/lib/fftw/mpi
@@ -441,10 +441,10 @@ SRC = any-true.c api.c block.c choose-radix.c conf.c dtensor.c fftw3-mpi.h ifftw
 libfftw3_mpi_la_SOURCES = $(SRC) $(TRANSPOSE_SRC) $(DFT_SRC) $(RDFT_SRC) $(RDFT2_SRC)
 libfftw3_mpi_la_LDFLAGS = -version-info 9:9:6
 libfftw3_mpi_la_LIBADD = ../libfftw3.la 
-#mpi_bench_CFLAGS = $(OPENMP_CFLAGS)
-#mpi_bench_CFLAGS = $(PTHREAD_CFLAGS)
-#LIBFFTWTHREADS = $(top_builddir)/threads/libfftw3_threads.la
-#LIBFFTWTHREADS = $(top_builddir)/threads/libfftw3_omp.la
+##mpi_bench_CFLAGS = $(OPENMP_CFLAGS)
+mpi_bench_CFLAGS = $(PTHREAD_CFLAGS)
+LIBFFTWTHREADS = $(top_builddir)/threads/libfftw3_threads.la
+##LIBFFTWTHREADS = $(top_builddir)/threads/libfftw3_omp.la
 mpi_bench_SOURCES = mpi-bench.c $(top_srcdir)/tests/fftw-bench.c $(top_srcdir)/tests/hook.c
 mpi_bench_LDADD = libfftw3_mpi.la $(LIBFFTWTHREADS) $(top_builddir)/libfftw3.la $(top_builddir)/libbench2/libbench2.a $(MPILIBS) $(THREADLIBS)
 CHECK = $(top_srcdir)/tests/check.pl
@@ -1004,10 +1004,10 @@ uninstall-am: uninstall-includeHEADERS uninstall-libLTLIBRARIES \
 #	@echo "--------------------------------------------------------------"
 #	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 4 CPUs"
 #	@echo "--------------------------------------------------------------"
-##	perl -w $(CHECK) $(CHECKOPTS) --mpi --nthreads=2 "$(MPIRUN) -np 3 `pwd`/mpi-bench"
-##	@echo "--------------------------------------------------------------"
-##	@echo "      MPI FFTW threaded transforms passed "$(NUMCHECK)" tests!"
-##	@echo "--------------------------------------------------------------"
+#	perl -w $(CHECK) $(CHECKOPTS) --mpi --nthreads=2 "$(MPIRUN) -np 3 `pwd`/mpi-bench"
+#	@echo "--------------------------------------------------------------"
+#	@echo "      MPI FFTW threaded transforms passed "$(NUMCHECK)" tests!"
+#	@echo "--------------------------------------------------------------"
 
 #bigcheck: mpi-bench$(EXEEXT)
 #	$(MAKE) $(AM_MAKEFLAGS) NUMCHECK=100 CHECKSIZE=60000 check-local

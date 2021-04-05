@@ -372,8 +372,8 @@ PATH_SEPARATOR = :
 POW_LIB = 
 PRECISION = d
 PREC_SUFFIX = 
-PTHREAD_CC = 
-PTHREAD_CFLAGS = 
+PTHREAD_CC = gcc
+PTHREAD_CFLAGS = -D_THREAD_SAFE 
 PTHREAD_LIBS = 
 RANLIB = ranlib
 SED = /usr/local/bin/gsed
@@ -383,7 +383,7 @@ SHELL = /bin/sh
 SSE2_CFLAGS = 
 STACK_ALIGN_CFLAGS = 
 STRIP = strip
-THREADLIBS = 
+THREADLIBS =  
 VERSION = 3.3.9
 VSX_CFLAGS = 
 abs_builddir = /Users/rmukherj/Projects/tara2d/lib/fftw
@@ -514,7 +514,7 @@ SIMD_LIBS = simd-support/libsimd_support.la
 #GENERIC_SIMD256_LIBS = dft/simd/generic-simd256/libdft_generic_simd256_codelets.la      \
 #rdft/simd/generic-simd256/librdft_generic_simd256_codelets.la
 
-##COMBINED_THREADLIBS = threads/libfftw3_threads.la
+#COMBINED_THREADLIBS = threads/libfftw3_threads.la
 libfftw3_la_SOURCES = 
 libfftw3_la_LIBADD = \
 	kernel/libkernel.la				\

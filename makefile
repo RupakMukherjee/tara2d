@@ -6,7 +6,8 @@ C_DIR := $(shell pwd)
 # Definition of the Flags
 INC=-I$(LOCAL)/include
 LIB=-L$(LOCAL)/lib
-FFLAGS = -w -lfftw3 -lm
+FFLAGS = -w -lfftw3_threads -lfftw3 -lm
+OMPFLAGS = -O -fopenmp
 
 EXEC=tara2d
 
@@ -15,7 +16,7 @@ ODIR  = src/obj
 LDIR	= lib
 OUTDIR = output
 
-SRC_ 	= main.f95 hyd2main.f95 derive.f95 ab.f95
+SRC_ 	= main.f95 hyd1main.f95 hyd2main.f95 hyd2mainOMP.f95 derive.f95 ab.f95
 OBJ_	= $(SRC_:.f95=.o)
 
 SRC = $(patsubst %,$(SDIR)/%,$(SRC_))
@@ -25,18 +26,18 @@ all: $(EXEC)
 
 $(EXEC) : $(ODIR)/main.o $(OBJ)
 	@echo "Linking TARA2D"
-	@$(F95) $^ -o $@ $(INIFLAG) $(FFLAGS) $(INC) $(LIB)
+	@$(F95) $^ -o $@ $(INIFLAG) $(FFLAGS) $(INC) $(LIB) $(OMPFLAGS)
 	@echo "TARA2D is built"
 	@mkdir -p $(OUTDIR)
 
 $(ODIR)/%.o: $(SDIR)/%.f95
 	@echo "Compiling $<"
 	@mkdir -p $(ODIR)
-	@$(F95) -c $< -o $@ $(FFLAGS) $(INC) $(LIB)
+	@$(F95) -c $< -o $@ $(FFLAGS) $(INC) $(LIB) $(OMPFLAGS)
 
 subsystems:
 	@cd $(LDIR)/iniparser && $(MAKE)
-	@cd $(LDIR)/fftw && ./configure --prefix=$(C_DIR)/$(LOCAL)
+	@cd $(LDIR)/fftw && ./configure --enable-threads --with-openmp --prefix=$(C_DIR)/$(LOCAL)
 	@cd $(LDIR)/fftw && $(MAKE)
 	@cd $(LDIR)/fftw && $(MAKE) install
 	export PATH=$(C_DIR)/$(LOCAL)/bin

@@ -42,9 +42,12 @@ elseif (dim == 1 .and. arch == "multi-gpu") then
 elseif (dim == 2 .and. arch == "cpu" .and. mode == "serial") then
   write(*,*) "Congrats! Your code is running!"
   call tara2dHydSer(arg)
-elseif (dim == 2 .and. arch == "cpu" .and. mode == "openmp") then
+elseif (dim == 2 .and. arch == "cpu" .and. mode == "openmp" .and. domain == "hydro") then
   write(*,*) "Congrats! Your code is running!"
   call tara2dHydOMP(arg)
+elseif (dim == 2 .and. arch == "cpu" .and. mode == "openmp" .and. domain == "mhd") then
+  write(*,*) "Congrats! Your code is running!"
+  call tara2dMHDOMP(arg)
 elseif (dim == 2 .and. arch == "cpu" .and. mode == "mpi") then
   write(*,*) "Under preparation. Please wait!"
 elseif (dim == 2 .and. arch == "single-gpu") then
@@ -53,8 +56,9 @@ elseif (dim == 2 .and. arch == "multi-gpu") then
   write(*,*) "Under preparation. Please wait!"
 elseif (dim == 3 .and. arch == "cpu" .and. mode == "serial") then
   write(*,*) "Under preparation. Please wait!"
-elseif (dim == 3 .and. arch == "cpu" .and. mode == "openmp") then
-  write(*,*) "Under preparation. Please wait!"
+elseif (dim == 3 .and. arch == "cpu" .and. mode == "openmp" .and. domain == "mhd") then
+  write(*,*) "Congrats! Your code is running!"
+  call tara3dMHDOMP(arg)
 elseif (dim == 3 .and. arch == "cpu" .and. mode == "mpi") then
   write(*,*) "Under preparation. Please wait!"
 elseif (dim == 3 .and. arch == "single-gpu") then

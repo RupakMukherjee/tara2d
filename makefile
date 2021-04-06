@@ -17,7 +17,7 @@ LDIR	= lib
 OUTDIR = output
 
 SRC_ 	:= main.f95
-SRC_ 	:= hyd1main.f95 hyd2main.f95 hyd2mainOMP.f95 mhd2mainOMP.f95 mhd3mainOMP.f95
+SRC_ 	:= main1csh.f95 main2csh.f95 main2coh.f95 main2com.f95 main3com.f95
 SRC_ 	+= derive2csh.f95 derive2coh.f95 derive2com.f95 derive3com.f95
 SRC_ 	+= ab2csh.f95 ab2coh.f95 ab2com.f95 ab3com.f95
 SRC_ 	+= euler2coh.f95

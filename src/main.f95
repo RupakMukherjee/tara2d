@@ -32,7 +32,7 @@ call cfg%get("type","domain",domain)
 if (dim == 1) then
   if (arch == "cpu") then
     if (mode == "serial") then
-      write(*,*) "Congrats! Your ONE dimensional SERIAL HYDRODYNAMIC code is now running!"
+      write(*,*) "Congrats! Your ONE dimensional SERIAL HYDRODYNAMIC code is now running on single CPU!"
       call tara1dHydSer(arg)
     elseif (mode == "openmp") then
       write(*,*) "Under preparation. Please wait!"
@@ -48,13 +48,13 @@ if (dim == 1) then
 elseif (dim == 2) then
   if (arch == "cpu") then
     if (mode == "serial") then
-      write(*,*) "Congrats! Your TWO dimensional SERIAL HYDRODYNAMIC code is now running!"
+      write(*,*) "Congrats! Your TWO dimensional SERIAL HYDRODYNAMIC code is now running on single CPU!"
       call tara2dHydSer(arg)
     elseif (mode == "openmp" .and. domain == "hydro") then
-      write(*,*) "Congrats! Your TWO dimensional OPENMP parallel HYDRODYNAMIC code is now running!"
+      write(*,*) "Congrats! Your TWO dimensional OPENMP parallel HYDRODYNAMIC code is now running on multiple CPU!"
       call tara2dHydOMP(arg)
     elseif (mode == "openmp" .and. domain == "mhd") then
-      write(*,*) "Congrats! Your TWO dimensional OPENMP parallel MHD code is now running!"
+      write(*,*) "Congrats! Your TWO dimensional OPENMP parallel MHD code is now running on multiple CPU!"
       call tara2dMHDOMP(arg)
     elseif (mode == "mpi") then
       write(*,*) "Under preparation. Please wait!"
@@ -70,7 +70,7 @@ elseif (dim == 3) then
     if (mode == "serial") then
       write(*,*) "Under preparation. Please wait!"
     elseif (mode == "openmp" .and. domain == "mhd") then
-      write(*,*) "Congrats! Your THREE dimensional OPENMP parallel MHD code is now running!"
+      write(*,*) "Congrats! Your THREE dimensional OPENMP parallel MHD code is now running on multiple CPU!"
       call tara3dMHDOMP(arg)
     elseif (mode == "mpi") then
       write(*,*) "Under preparation. Please wait!"

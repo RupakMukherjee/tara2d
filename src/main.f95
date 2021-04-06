@@ -28,43 +28,58 @@ call cfg%get("architecture","arch",arch)
 call cfg%get("parallel","mode",mode)
 call cfg%get("type","domain",domain)
 
-if (dim == 1 .and. arch == "cpu" .and. mode == "serial") then
-  write(*,*) "Congrats! Your code is running!"
-  call tara1dHydSer(arg)
-elseif (dim == 1 .and. arch == "cpu" .and. mode == "openmp") then
-  write(*,*) "Under preparation. Please wait!"
-elseif (dim == 1 .and. arch == "cpu" .and. mode == "mpi") then
-  write(*,*) "Under preparation. Please wait!"
-elseif (dim == 1 .and. arch == "single-gpu") then
-  write(*,*) "Under preparation. Please wait!"
-elseif (dim == 1 .and. arch == "multi-gpu") then
-  write(*,*) "Under preparation. Please wait!"
-elseif (dim == 2 .and. arch == "cpu" .and. mode == "serial") then
-  write(*,*) "Congrats! Your code is running!"
-  call tara2dHydSer(arg)
-elseif (dim == 2 .and. arch == "cpu" .and. mode == "openmp" .and. domain == "hydro") then
-  write(*,*) "Congrats! Your code is running!"
-  call tara2dHydOMP(arg)
-elseif (dim == 2 .and. arch == "cpu" .and. mode == "openmp" .and. domain == "mhd") then
-  write(*,*) "Congrats! Your code is running!"
-  call tara2dMHDOMP(arg)
-elseif (dim == 2 .and. arch == "cpu" .and. mode == "mpi") then
-  write(*,*) "Under preparation. Please wait!"
-elseif (dim == 2 .and. arch == "single-gpu") then
-  write(*,*) "Under preparation. Please wait!"
-elseif (dim == 2 .and. arch == "multi-gpu") then
-  write(*,*) "Under preparation. Please wait!"
-elseif (dim == 3 .and. arch == "cpu" .and. mode == "serial") then
-  write(*,*) "Under preparation. Please wait!"
-elseif (dim == 3 .and. arch == "cpu" .and. mode == "openmp" .and. domain == "mhd") then
-  write(*,*) "Congrats! Your code is running!"
-  call tara3dMHDOMP(arg)
-elseif (dim == 3 .and. arch == "cpu" .and. mode == "mpi") then
-  write(*,*) "Under preparation. Please wait!"
-elseif (dim == 3 .and. arch == "single-gpu") then
-  write(*,*) "Under preparation. Please wait!"
-elseif (dim == 3 .and. arch == "multi-gpu") then
-  write(*,*) "Under preparation. Please wait!"
+!DIMENSION = 1
+if (dim == 1) then
+  if (arch == "cpu") then
+    if (mode == "serial") then
+      write(*,*) "Congrats! Your ONE dimensional SERIAL HYDRODYNAMIC code is now running!"
+      call tara1dHydSer(arg)
+    elseif (mode == "openmp") then
+      write(*,*) "Under preparation. Please wait!"
+    elseif (mode == "mpi") then
+      write(*,*) "Under preparation. Please wait!"
+    endif
+  elseif (arch == "single-gpu") then
+    write(*,*) "Under preparation. Please wait!"
+  elseif (arch == "multi-gpu") then
+    write(*,*) "Under preparation. Please wait!"
+  endif
+!DIMENSION = 2
+elseif (dim == 2) then
+  if (arch == "cpu") then
+    if (mode == "serial") then
+      write(*,*) "Congrats! Your TWO dimensional SERIAL HYDRODYNAMIC code is now running!"
+      call tara2dHydSer(arg)
+    elseif (mode == "openmp" .and. domain == "hydro") then
+      write(*,*) "Congrats! Your TWO dimensional OPENMP parallel HYDRODYNAMIC code is now running!"
+      call tara2dHydOMP(arg)
+    elseif (mode == "openmp" .and. domain == "mhd") then
+      write(*,*) "Congrats! Your TWO dimensional OPENMP parallel MHD code is now running!"
+      call tara2dMHDOMP(arg)
+    elseif (mode == "mpi") then
+      write(*,*) "Under preparation. Please wait!"
+    endif
+  elseif (arch == "single-gpu") then
+    write(*,*) "Under preparation. Please wait!"
+  elseif (arch == "multi-gpu") then
+    write(*,*) "Under preparation. Please wait!"
+  endif
+!DIMENSION = 3
+elseif (dim == 3) then
+  if (arch == "cpu") then
+    if (mode == "serial") then
+      write(*,*) "Under preparation. Please wait!"
+    elseif (mode == "openmp" .and. domain == "mhd") then
+      write(*,*) "Congrats! Your THREE dimensional OPENMP parallel MHD code is now running!"
+      call tara3dMHDOMP(arg)
+    elseif (mode == "mpi") then
+      write(*,*) "Under preparation. Please wait!"
+    endif
+  elseif (arch == "single-gpu") then
+    write(*,*) "Under preparation. Please wait!"
+  elseif (arch == "multi-gpu") then
+    write(*,*) "Under preparation. Please wait!"
+  endif
 else
   write(*,*) "Incompatible Input file. Please check TARA user-manual."
 endif

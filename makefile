@@ -17,12 +17,12 @@ LDIR	= lib
 OUTDIR = output
 
 SRC_ 	:= main.f95
-SRC_ 	:= main1csh.f95 main2csh.f95 main2coh.f95 main2com.f95 main3com.f95
-SRC_ 	+= derive2csh.f95 derive2coh.f95 derive2com.f95 derive3com.f95
-SRC_ 	+= ab2csh.f95 ab2coh.f95 ab2com.f95 ab3com.f95
+SRC_ 	:= main1csh.f95 main2csh.f95 main2css.f95 main2coh.f95 main2com.f95 main3com.f95
+SRC_ 	+= derive2csh.f95 derive2css.f95 derive2coh.f95 derive2com.f95 derive3com.f95
+SRC_ 	+= ab2csh.f95 ab2css.f95 ab2coh.f95 ab2com.f95 ab3com.f95
 SRC_ 	+= euler2coh.f95
 SRC_ 	+= pcnk2coh.f95 pcukx2coh.f95 pcuky2coh.f95
-SRC_ 	+= rk4nk2coh.f95 rk4ukx2coh.f95 rk4uky2coh.f95
+SRC_ 	+= rk42css.f95 rk4nk2coh.f95 rk4ukx2coh.f95 rk4uky2coh.f95
 OBJ_	= $(SRC_:.f95=.o)
 
 SRC = $(patsubst %,$(SDIR)/%,$(SRC_))

@@ -9,7 +9,7 @@ type(cfg_t):: cfg
 integer dim, iargc, numb
 
 character (len=90) :: filename
-character (len=90) :: arch, mode, domain
+character (len=90) :: arch, mode, domain, hydrotype
 character (len=32) :: arg
 
 numb = iargc()
@@ -27,6 +27,7 @@ call cfg%get("dimension","dim",dim)
 call cfg%get("architecture","arch",arch)
 call cfg%get("parallel","mode",mode)
 call cfg%get("type","domain",domain)
+call cfg%get("problem","hydrotype",hydrotype)
 
 !DIMENSION = 1
 if (dim == 1) then
@@ -47,9 +48,12 @@ if (dim == 1) then
 !DIMENSION = 2
 elseif (dim == 2) then
   if (arch == "cpu") then
-    if (mode == "serial") then
+    if (mode == "serial" .and. hydrotype == "bare") then
       write(*,*) "Congrats! Your TWO dimensional SERIAL HYDRODYNAMIC code is now running on single CPU!"
       call tara2dHydSer(arg)
+    elseif (mode == "serial" .and. hydrotype == "screen") then
+      write(*,*) "Congrats! Your TWO dimensional SERIAL SCREENED HYDRODYNAMIC code is now running on single CPU!"
+      call tara2dScrSer(arg)
     elseif (mode == "openmp" .and. domain == "hydro") then
       write(*,*) "Congrats! Your TWO dimensional OPENMP parallel HYDRODYNAMIC code is now running on multiple CPU!"
       call tara2dHydOMP(arg)

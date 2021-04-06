@@ -1,6 +1,6 @@
 !=================== SUBROUTINE ADAMS-BASHFORTH ==========================
 
-subroutine ab (Nx, Ny, Nh, nu, time, dt, omegak, omegak_new, dt_omegak_old, dt_omegak_new)
+subroutine ab2csh (Nx, Ny, Nh, nu, time, dt, omegak, omegak_new, dt_omegak_old, dt_omegak_new)
 implicit none
 integer (kind = 4) Nx, Ny, Nh, i, j
 real (kind = 8) time, dt, nu
@@ -13,4 +13,4 @@ do i = 1,Nh
   enddo
 enddo
 
-end subroutine ab
+end subroutine ab2csh

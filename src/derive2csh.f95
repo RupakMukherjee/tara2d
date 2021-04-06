@@ -1,6 +1,6 @@
 !=================== SUBROUTINE DERIVE ===================================
 
-subroutine derive (Nx, Ny, Nh, nu, time, omegak, omegak_new, dt_omegak_old, dt_omegak_new)
+subroutine derive2csh (Nx, Ny, Nh, nu, time, omegak, omegak_new, dt_omegak_old, dt_omegak_new)
 implicit none
 include "fftw3.f"
 integer (kind = 4) Nx, Ny, Nh, i, j
@@ -146,4 +146,4 @@ enddo
 
 return
 
-end subroutine derive
+end subroutine derive2csh

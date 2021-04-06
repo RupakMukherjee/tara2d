@@ -115,8 +115,8 @@ do time = time_min, time_max, dt
 
 t = nint(time/dt) - int(time_min/dt)
 
-  call derive (Nx, Ny, Nh, nu, time, omegak, omegak_new, dt_omegak_old, dt_omegak_new)
-  call ab (Nx, Ny, Nh, nu, time, dt, omegak, omegak_new, dt_omegak_old, dt_omegak_new)
+  call derive2csh (Nx, Ny, Nh, nu, time, omegak, omegak_new, dt_omegak_old, dt_omegak_new)
+  call ab2csh (Nx, Ny, Nh, nu, time, dt, omegak, omegak_new, dt_omegak_old, dt_omegak_new)
 
 do i = 1, Nh
   do j = 1, Ny
